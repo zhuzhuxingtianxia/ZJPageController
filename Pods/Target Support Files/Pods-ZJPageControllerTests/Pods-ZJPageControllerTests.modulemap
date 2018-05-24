@@ -1,0 +1,6 @@
+framework module Pods_ZJPageControllerTests {
+  umbrella header "Pods-ZJPageControllerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
