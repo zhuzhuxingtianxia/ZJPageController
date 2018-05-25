@@ -44,9 +44,8 @@
  @param viewController 需要添加到的控制器
  @param controllers 包含的子控制器
  @param titles 标题
- @param frame 视图frame
  @return 返回实例化的控制器
  */
-+ (ZJPageViewController *)segmentOnViewController:(UIViewController *)viewController childControllers:(NSArray<UIViewController *> *)controllers setmentTitles:(NSArray<NSString *> *)titles ViewFrame:(CGRect)frame ;
++ (ZJPageViewController *)segmentOnViewController:(UIViewController *)viewController childControllers:(NSArray<UIViewController *> *)controllers setmentTitles:(NSArray<NSString *> *)titles;
 
 @end

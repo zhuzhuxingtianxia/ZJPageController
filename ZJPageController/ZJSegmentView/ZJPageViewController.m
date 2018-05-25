@@ -13,20 +13,18 @@
 //状态栏高
 #define statusBarH CGRectGetHeight([UIApplication sharedApplication].statusBarFrame)
 
-@interface ZJPageViewController ()<ZJSegmentViewDelagate,UIPageViewControllerDataSource,UIPageViewControllerDelegate>{
-    NSInteger _currentIndex;
-}
+@interface ZJPageViewController ()<ZJSegmentViewDelagate,UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+
 @property (nonatomic, strong) UIPageViewController *pageViewController;
 @property (nonatomic, strong) ZJSegmentView *segmentView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @end
 
 @implementation ZJPageViewController
-+ (ZJPageViewController *)segmentOnViewController:(UIViewController *)viewController childControllers:(NSArray<UIViewController *> *)controllers setmentTitles:(NSArray<NSString *> *)titles ViewFrame:(CGRect)frame {
++ (ZJPageViewController *)segmentOnViewController:(UIViewController *)viewController childControllers:(NSArray<UIViewController *> *)controllers setmentTitles:(NSArray<NSString *> *)titles {
     
     ZJPageViewController *segment = [[ZJPageViewController alloc]init];
     
-    segment.view.frame = frame;
     [segment.dataSource addObjectsFromArray:controllers];
     segment.segmentTitles = titles;
     [viewController addChildViewController:segment];
@@ -48,8 +46,13 @@
     }
     self.segmentTitles = titles;
     self.segmentView.datas = titles;
-    
+    self.selectedIndex = 1;
     [self.view setNeedsUpdateConstraints];
+}
+
+-(void)setSelectedIndex:(NSInteger)selectedIndex {
+    _selectedIndex = selectedIndex;
+    self.segmentView.selectedIndex = _selectedIndex;
 }
 
 -(void)updateViewConstraints {
@@ -141,11 +144,11 @@
     
     NSInteger index = [self.dataSource indexOfObject:nextVC];
     
-    _currentIndex = index;
+    _selectedIndex = index;
 }
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
     if (completed) {
-        self.segmentView.selectedIndex = _currentIndex ;
+        self.segmentView.selectedIndex = _selectedIndex ;
     }
 }
 
@@ -167,7 +170,7 @@
 - (void)segmentView:(ZJSegmentView *)view didSelectedIndex:(NSInteger)index {
     UIViewController *vc = [self.dataSource objectAtIndex:index];
     
-    if (index > _currentIndex) {
+    if (index > _selectedIndex) {
         
         [self.pageViewController setViewControllers:@[vc] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
             
@@ -179,7 +182,7 @@
         }];
     }
     
-    _currentIndex = index;
+    _selectedIndex = index;
 }
 
 #pragma mark -- UIViewController发生改变的一些方法
@@ -199,7 +202,7 @@
         _segmentView.delegate = self;
         _segmentView.normalColor = [UIColor greenColor];
         _segmentView.selectedColor = [UIColor redColor];
-        _segmentView.selectedIndex = 1;
+//        _segmentView.selectedIndex = 1;
         [self.view addSubview:_segmentView];
     }
     
