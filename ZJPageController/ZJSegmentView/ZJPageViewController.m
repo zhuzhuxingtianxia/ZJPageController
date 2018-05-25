@@ -37,15 +37,14 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
-    NSMutableArray *titles = [NSMutableArray arrayWithCapacity:0];
-    for (int i = 0; i < 10; i++) {
+    NSArray *titles = @[@"推荐",@"机器人争霸",@"热点",@"电视剧",@"资讯",@"儿童",@"直播中心",@"远大前程",@"订阅",@"网络游戏",];
+    for (int i = 0; i < titles.count; i++) {
         
         UIViewController *con = [[UIViewController alloc]init];
         [self.dataSource addObject:con];
-        NSString *str = [NSString stringWithFormat:@"第 %d 页", i+1];
-        con.title = str;
+        con.title = titles[i];
         con.view.backgroundColor = [UIColor randColor];
-        [titles addObject:str];
+        
     }
     self.segmentTitles = titles;
     self.segmentView.datas = titles;
@@ -198,10 +197,9 @@
     if (_segmentView == nil) {
         _segmentView = [[ZJSegmentView alloc]init] ;
         _segmentView.delegate = self;
-        _segmentView.fontSize = 12;
         _segmentView.normalColor = [UIColor greenColor];
         _segmentView.selectedColor = [UIColor redColor];
-        _segmentView.selectedIndex = 0;
+        _segmentView.selectedIndex = 1;
         [self.view addSubview:_segmentView];
     }
     

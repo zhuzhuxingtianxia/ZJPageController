@@ -42,10 +42,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-//        self.backgroundColor = [UIColor yellowColor];
         _selectedColor = [UIColor redColor];
         _normalColor = [UIColor blackColor];
-        _fontSize = 12.0;
+        _fontSize = 15.0;
         [self.collection registerClass:[ZJSegmentCell class] forCellWithReuseIdentifier:NSStringFromClass([ZJSegmentCell class])];
     }
     
@@ -169,8 +168,7 @@
     cell.fontSize = self.fontSize;
     
     ZJSegmentModel *model = [self.dataSources objectAtIndex:indexPath.row];
-    cell.title = model.title;
-    cell.isSelected = model.selected;
+    cell.model = model;
     
     return cell;
 }
@@ -195,22 +193,20 @@
     }
 }
 #pragma mark - UICollectionViewFlowLayout
+static CGFloat LineSpacing = 4.0;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    if (self.itemWidth > 0) {
+        CGFloat itemWidth = self.itemWidth - (self.dataSources.count+1)*LineSpacing/self.dataSources.count;
+        return CGSizeMake(itemWidth, self.bounds.size.height);
+    }
     ZJSegmentModel *model = [self.dataSources objectAtIndex:indexPath.row];
-    
     return CGSizeMake(model.width, self.bounds.size.height);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     
-    return UIEdgeInsetsMake(0, 4, 0, 4);
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
-    NSIndexPath *path = [NSIndexPath indexPathForRow:_selectedIndex inSection:0];
-    [self moveLineToIndexPath:path animation:YES];
+    return UIEdgeInsetsMake(0, LineSpacing, 0, LineSpacing);
 }
 
 #pragma mark - 移动横线
@@ -226,7 +222,7 @@
     
     if (animation) {
         
-        [UIView animateWithDuration:0.1 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             
             self.line.bounds = lineBounds;
             self.line.center = lineCenter;
@@ -247,7 +243,7 @@
     
     ZJSegmentModel *model = [self.dataSources firstObject];
     
-    self.line.frame = CGRectMake(4, CGRectGetHeight(self.frame) - 2, model.width, 2);
+    self.line.frame = CGRectMake(LineSpacing, CGRectGetHeight(self.frame) - 2, model.width, 2);
     
     [self setSelectedIndex:self.selectedIndex animation:NO];
 }
@@ -262,31 +258,23 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @end
 @implementation ZJSegmentCell
-- (UILabel *)titleLabel {
-    if (_titleLabel == nil) {
-        _titleLabel = [[UILabel alloc]init];
-        _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont systemFontOfSize:12];
-        
-        [self addSubview:_titleLabel];
-    }
-    
-    return _titleLabel;
-}
-
-- (void)setIsSelected:(BOOL)isSelected {
-    _isSelected = isSelected;
-    
-    self.titleLabel.textColor = isSelected ? _selectedColor : _normalColor;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-    
+        
     }
     
     return self;
+}
+
+-(void)setModel:(ZJSegmentModel *)model {
+     self.titleLabel.textColor = model.selected ? _selectedColor : _normalColor;
+    self.titleLabel.text = model.title;
+}
+
+-(void)setFontSize:(CGFloat)fontSize {
+    _fontSize = fontSize;
+    self.titleLabel.font = [UIFont systemFontOfSize:_fontSize];
 }
 
 - (void)layoutSubviews {
@@ -294,10 +282,21 @@
     
     self.titleLabel.backgroundColor = self.backgroundColor;
     self.titleLabel.frame = self.bounds;
-    self.titleLabel.font = [UIFont systemFontOfSize:_fontSize];
-    self.titleLabel.text = _title;
     
 }
+
+- (UILabel *)titleLabel {
+    if (_titleLabel == nil) {
+        _titleLabel = [[UILabel alloc]init];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.font = [UIFont systemFontOfSize:15];
+        
+        [self addSubview:_titleLabel];
+    }
+    
+    return _titleLabel;
+}
+
 @end
 
 
@@ -306,7 +305,7 @@
     self = [super init];
     if (self) {
         _selected = NO;
-        _fontSize = 12.0;
+        _fontSize = 15.0;
     }
     
     return self;

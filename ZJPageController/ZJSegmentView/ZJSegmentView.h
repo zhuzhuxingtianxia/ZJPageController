@@ -11,7 +11,11 @@
 
 @protocol ZJSegmentViewDelagate <NSObject>
 
-- (void)segmentView:(ZJSegmentView *)view didSelectedIndex:(NSInteger)index ;
+- (void)segmentView:(ZJSegmentView *)view didSelectedIndex:(NSInteger)index;
+
+@optional
+//暂未定义
+- (CGFloat)segmentView:(ZJSegmentView *)view widthForItemAtIndex:(NSInteger)index;
 @end
 
 @interface ZJSegmentView : UIView
@@ -20,9 +24,12 @@
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, strong) UIColor *normalColor;
 @property (nonatomic, strong) UIColor *selectedColor;
+//默认大小15
 @property (nonatomic, assign) CGFloat fontSize;
+//设置固定宽度，默认根据文字内容设置
+@property (nonatomic,assign)CGFloat itemWidth;
 
-+ (instancetype)segmentViewWithDatas:(NSArray<NSString *> *)datas ;
++ (instancetype)segmentViewWithDatas:(NSArray<NSString *> *)datas;
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex animation:(BOOL)animation ;
 - (void)reloadData;
@@ -33,10 +40,10 @@
 
 ///*******************************************************************
 #pragma ZJSegmentCell
+@class ZJSegmentModel;
 @interface ZJSegmentCell : UICollectionViewCell
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) BOOL isSelected;
+@property (nonatomic, strong) ZJSegmentModel *model;
 
 @property (nonatomic, strong) UIColor *selectedColor;
 @property (nonatomic, strong) UIColor *normalColor;
