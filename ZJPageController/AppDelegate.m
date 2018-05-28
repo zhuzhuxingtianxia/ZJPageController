@@ -7,9 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import <MMDrawerController/MMDrawerController.h>
+
+#import "MainViewController.h"
+#import "LeftViewController.h"
 
 @interface AppDelegate ()
-
+/**
+ *  MMDrawerController属性
+ */
+@property(nonatomic,strong) MMDrawerController * drawerController;
 @end
 
 @implementation AppDelegate
@@ -17,9 +24,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    [self createMainView];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
+-(void)createMainView {
+    //1、初始化控制器
+    UIViewController *mainVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([MainViewController class])];
+    UIViewController *leftVC = [[LeftViewController alloc]init];
+    
+    UINavigationController *centerNvaVC = [[UINavigationController alloc]initWithRootViewController:mainVC];
+    UINavigationController *leftNvaVC = [[UINavigationController alloc]initWithRootViewController:leftVC];
+    //3、使用MMDrawerController
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:centerNvaVC leftDrawerViewController:leftNvaVC];
+    [self.drawerController setShowsShadow:NO];
+    //4、设置打开/关闭抽屉的手势
+    self.drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    self.drawerController.closeDrawerGestureModeMask =MMCloseDrawerGestureModeAll;
+    //5、设置左右两边抽屉显示的多少
+    self.drawerController.maximumLeftDrawerWidth = self.window.bounds.size.width * 0.8;
+    self.drawerController.maximumRightDrawerWidth = 200.0;
+   
+    [self.window setRootViewController:self.drawerController];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

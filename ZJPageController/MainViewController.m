@@ -1,34 +1,39 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  ZJPageController
 //
-//  Created by ZZJ on 2018/5/23.
+//  Created by ZZJ on 2018/5/28.
 //  Copyright © 2018年 Jion. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "ZJPageViewController.h"
 #import "ZJSegmentView.h"
 #import <Masonry/Masonry.h>
-@interface ViewController ()<ZJSegmentViewDelagate>
+#import "UIViewController+MMDrawerController.h"
+
+@interface MainViewController ()<ZJSegmentViewDelagate>
 @property (nonatomic, strong) ZJSegmentView *segmentView;
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"抽屉" style:UIBarButtonItemStylePlain target:self action:@selector(leftBtn)];
+    
+    
     NSArray *titles = @[@"推荐",@"机器人争霸",@"热点",];
     self.segmentView.datas = titles;
     [self.segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
         make.top.mas_equalTo(0);
         make.height.mas_equalTo(40);
-     
+        
     }];
-    
 }
+
 #pragma mark -- ZJSegmentViewDelagate
 - (void)segmentView:(ZJSegmentView *)view didSelectedIndex:(NSInteger)index {
     
@@ -59,11 +64,26 @@
 - (IBAction)verticalAction:(id)sender {
     //竖直
 }
+-(void)leftBtn{
+    //这里的话是通过遍历循环拿到之前在AppDelegate中声明的那个MMDrawerController属性，然后判断是否为打开状态，如果是就关闭，否就是打开(初略解释，里面还有一些条件)
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    
+}
+    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
