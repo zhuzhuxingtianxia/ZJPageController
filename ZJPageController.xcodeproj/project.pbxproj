@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		128894D276E8A9FA828DA459 /* Pods_ZJPageControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9217832948C980288E2FB45D /* Pods_ZJPageControllerTests.framework */; };
-		B63B79A420B58DAB0014FC90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B63B79A320B58DAB0014FC90 /* AppDelegate.m */; };
 		B63B79AA20B58DAB0014FC90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63B79A820B58DAB0014FC90 /* Main.storyboard */; };
 		B63B79AC20B58DAB0014FC90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63B79AB20B58DAB0014FC90 /* Assets.xcassets */; };
 		B63B79AF20B58DAB0014FC90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63B79AD20B58DAB0014FC90 /* LaunchScreen.storyboard */; };
@@ -18,8 +17,12 @@
 		B64550A220B653B900D5A27D /* ZJSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64550A120B653B900D5A27D /* ZJSegmentView.m */; };
 		B64550A520B67F6500D5A27D /* ZJPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64550A420B67F6500D5A27D /* ZJPageViewController.m */; };
 		B64550A920B6860B00D5A27D /* UIColor+HexConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = B64550A720B6860B00D5A27D /* UIColor+HexConvert.m */; };
-		B6642A1120BBF70E00DA6B7A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6642A1020BBF70E00DA6B7A /* MainViewController.m */; };
-		B6642A1420BBF7E800DA6B7A /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6642A1320BBF7E800DA6B7A /* LeftViewController.m */; };
+		B66F730D20BCEBC700416177 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F730920BCEBC700416177 /* TabBarController.m */; };
+		B66F730E20BCEBC700416177 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F730C20BCEBC700416177 /* AppDelegate.m */; };
+		B66F731620BCEBCE00416177 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F731120BCEBCE00416177 /* CartViewController.m */; };
+		B66F731720BCEBCE00416177 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F731220BCEBCE00416177 /* MainViewController.m */; };
+		B66F731820BCEBCE00416177 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F731320BCEBCE00416177 /* LeftViewController.m */; };
+		B66F731B20BCEC1400416177 /* ZJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F731A20BCEC1400416177 /* ZJNavigationController.m */; };
 		BFB81794E165A6522D2658D6 /* Pods_ZJPageController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3321EE6A6D1742E330EDEC6F /* Pods_ZJPageController.framework */; };
 		C02B012955C81E7ED1D1A453 /* Pods_ZJPageControllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEA7CA38E04E04D9CECC034 /* Pods_ZJPageControllerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -50,8 +53,6 @@
 		781DC7F31B1F878FAFD210DE /* Pods-ZJPageController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJPageController.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJPageController/Pods-ZJPageController.release.xcconfig"; sourceTree = "<group>"; };
 		9217832948C980288E2FB45D /* Pods_ZJPageControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJPageControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63B799F20B58DAB0014FC90 /* ZJPageController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJPageController.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B63B79A220B58DAB0014FC90 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B63B79A320B58DAB0014FC90 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B63B79A920B58DAB0014FC90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B63B79AB20B58DAB0014FC90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B63B79AE20B58DAB0014FC90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,10 +70,18 @@
 		B64550A420B67F6500D5A27D /* ZJPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPageViewController.m; sourceTree = "<group>"; };
 		B64550A720B6860B00D5A27D /* UIColor+HexConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexConvert.m"; sourceTree = "<group>"; };
 		B64550A820B6860B00D5A27D /* UIColor+HexConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexConvert.h"; sourceTree = "<group>"; };
-		B6642A0F20BBF70E00DA6B7A /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		B6642A1020BBF70E00DA6B7A /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		B6642A1220BBF7E800DA6B7A /* LeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
-		B6642A1320BBF7E800DA6B7A /* LeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		B66F730920BCEBC700416177 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		B66F730A20BCEBC700416177 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B66F730B20BCEBC700416177 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		B66F730C20BCEBC700416177 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B66F731020BCEBCE00416177 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		B66F731120BCEBCE00416177 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		B66F731220BCEBCE00416177 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B66F731320BCEBCE00416177 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		B66F731420BCEBCE00416177 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B66F731520BCEBCE00416177 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		B66F731920BCEC1400416177 /* ZJNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNavigationController.h; sourceTree = "<group>"; };
+		B66F731A20BCEC1400416177 /* ZJNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNavigationController.m; sourceTree = "<group>"; };
 		B7709F4F289E87F6EA6C6998 /* Pods-ZJPageController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJPageController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJPageController/Pods-ZJPageController.debug.xcconfig"; sourceTree = "<group>"; };
 		C23914A88E79096E8A2E3919 /* Pods-ZJPageControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJPageControllerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJPageControllerTests/Pods-ZJPageControllerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,12 +164,8 @@
 			children = (
 				B64550A620B685FC00D5A27D /* Category */,
 				B645509F20B653A800D5A27D /* ZJSegmentView */,
-				B63B79A220B58DAB0014FC90 /* AppDelegate.h */,
-				B63B79A320B58DAB0014FC90 /* AppDelegate.m */,
-				B6642A0F20BBF70E00DA6B7A /* MainViewController.h */,
-				B6642A1020BBF70E00DA6B7A /* MainViewController.m */,
-				B6642A1220BBF7E800DA6B7A /* LeftViewController.h */,
-				B6642A1320BBF7E800DA6B7A /* LeftViewController.m */,
+				B66F730820BCEBC700416177 /* AppDelegate */,
+				B66F730F20BCEBCE00416177 /* Class */,
 				B63B79A820B58DAB0014FC90 /* Main.storyboard */,
 				B63B79AB20B58DAB0014FC90 /* Assets.xcassets */,
 				B63B79AD20B58DAB0014FC90 /* LaunchScreen.storyboard */,
@@ -206,6 +211,32 @@
 				B64550A720B6860B00D5A27D /* UIColor+HexConvert.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		B66F730820BCEBC700416177 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B66F730A20BCEBC700416177 /* AppDelegate.h */,
+				B66F730C20BCEBC700416177 /* AppDelegate.m */,
+				B66F730B20BCEBC700416177 /* TabBarController.h */,
+				B66F730920BCEBC700416177 /* TabBarController.m */,
+				B66F731920BCEC1400416177 /* ZJNavigationController.h */,
+				B66F731A20BCEC1400416177 /* ZJNavigationController.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B66F730F20BCEBCE00416177 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				B66F731020BCEBCE00416177 /* LeftViewController.h */,
+				B66F731320BCEBCE00416177 /* LeftViewController.m */,
+				B66F731420BCEBCE00416177 /* MainViewController.h */,
+				B66F731220BCEBCE00416177 /* MainViewController.m */,
+				B66F731520BCEBCE00416177 /* CartViewController.h */,
+				B66F731120BCEBCE00416177 /* CartViewController.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,12 +457,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66F731820BCEBCE00416177 /* LeftViewController.m in Sources */,
 				B64550A220B653B900D5A27D /* ZJSegmentView.m in Sources */,
 				B63B79B220B58DAB0014FC90 /* main.m in Sources */,
+				B66F730E20BCEBC700416177 /* AppDelegate.m in Sources */,
+				B66F731720BCEBCE00416177 /* MainViewController.m in Sources */,
+				B66F730D20BCEBC700416177 /* TabBarController.m in Sources */,
 				B64550A920B6860B00D5A27D /* UIColor+HexConvert.m in Sources */,
-				B6642A1120BBF70E00DA6B7A /* MainViewController.m in Sources */,
-				B6642A1420BBF7E800DA6B7A /* LeftViewController.m in Sources */,
-				B63B79A420B58DAB0014FC90 /* AppDelegate.m in Sources */,
+				B66F731B20BCEC1400416177 /* ZJNavigationController.m in Sources */,
+				B66F731620BCEBCE00416177 /* CartViewController.m in Sources */,
 				B64550A520B67F6500D5A27D /* ZJPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

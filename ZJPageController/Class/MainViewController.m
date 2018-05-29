@@ -18,9 +18,18 @@
 
 @implementation MainViewController
 
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+   self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.navigationItem.title = @"主页";
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"抽屉" style:UIBarButtonItemStylePlain target:self action:@selector(leftBtn)];
     
     

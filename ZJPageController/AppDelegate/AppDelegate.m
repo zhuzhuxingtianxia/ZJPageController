@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <MMDrawerController/MMDrawerController.h>
 
-#import "MainViewController.h"
+#import "TabBarController.h"
 #import "LeftViewController.h"
 
 @interface AppDelegate ()
@@ -34,14 +34,14 @@
 
 -(void)createMainView {
     //1、初始化控制器
-    UIViewController *mainVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([MainViewController class])];
-    UIViewController *leftVC = [[LeftViewController alloc]init];
+    UIViewController *mainVC = [[TabBarController alloc] init];
+    UIViewController *leftVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([LeftViewController class])];
     
-    UINavigationController *centerNvaVC = [[UINavigationController alloc]initWithRootViewController:mainVC];
     UINavigationController *leftNvaVC = [[UINavigationController alloc]initWithRootViewController:leftVC];
     //3、使用MMDrawerController
-    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:centerNvaVC leftDrawerViewController:leftNvaVC];
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:mainVC leftDrawerViewController:leftNvaVC];
     [self.drawerController setShowsShadow:NO];
+   
     //4、设置打开/关闭抽屉的手势
     self.drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
     self.drawerController.closeDrawerGestureModeMask =MMCloseDrawerGestureModeAll;
