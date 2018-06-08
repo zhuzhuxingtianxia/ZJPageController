@@ -4,7 +4,7 @@
 //
 //  Created by ZZJ on 2018/5/24.
 //  Copyright © 2018年 Jion. All rights reserved.
-//
+// (scrollView.isDragging || scrollView.isDecelerating) 打破循环问题
 
 #import <UIKit/UIKit.h>
 @class ZJSegmentView;
@@ -20,7 +20,7 @@
 
 @interface ZJSegmentView : UIView
 @property (nonatomic, weak) id <ZJSegmentViewDelagate> delegate;
-@property (nonatomic, strong) NSArray<NSString *> *datas;
+@property (nonatomic, strong) NSArray<NSString *> *dataSource;
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, strong) UIColor *normalColor;
 @property (nonatomic, strong) UIColor *selectedColor;
@@ -29,7 +29,7 @@
 //设置固定宽度，默认根据文字内容设置
 @property (nonatomic,assign)CGFloat itemWidth;
 
-+ (instancetype)segmentViewWithDatas:(NSArray<NSString *> *)datas;
++ (instancetype)segmentViewWithDataSource:(NSArray<NSString *> *)dataSource;
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex animation:(BOOL)animation ;
 - (void)reloadData;
