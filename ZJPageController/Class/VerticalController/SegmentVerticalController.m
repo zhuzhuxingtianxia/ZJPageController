@@ -7,7 +7,6 @@
 //
 
 #import "SegmentVerticalController.h"
-#import <SDWebImage/SDWebImageManager.h>
 #import "ZJSegmentView.h"
 #import "NetWorkEngine.h"
 #import "TitleCell.h"
@@ -18,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property(nonatomic,strong)NSMutableArray  *dataSoureArray;
-@property(nonatomic,strong)NSMutableArray *cellHeights;
 
 @end
 
@@ -62,50 +60,13 @@
                 }
                 
             }
-            [self cellheights:self.dataSoureArray];
+           
             _segmentView.dataSource = titlesArray;
             
             [self.tableView reloadData];
         }
         
     }];
-}
-
--(void)cellheights:(NSArray*)array {
-    [self.cellHeights removeAllObjects];
-    for (int i = 0; i< array.count; i++) {
-        NSArray *subArray = array[i];
-        NSMutableArray *subCellHeights = [NSMutableArray array];
-        for (NSInteger j = 0; j<subArray.count; j++) {
-            [subCellHeights addObject:@(90)];
-        }
-        [self.cellHeights addObject:subCellHeights];
-    }
-    __weak typeof(self) weakSlef = self;
-    for (int i = 0; i< array.count; i++) {
-        NSArray *subArray = array[i];
-        NSMutableArray *subCellHeights = self.cellHeights[i];
-        for (NSInteger j = 0; j<subArray.count; j++) {
-            id model = subArray[j];
-            if ([model isKindOfClass:[TitleModel class]]) {
-                
-                [subCellHeights replaceObjectAtIndex:j withObject:@(24)];
-                [self.tableView reloadData];
-                
-            }else if ([model isKindOfClass:[ImgModel class]]){
-                [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:((ImgModel*)model).photo] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-                    if (image) {
-                        CGFloat cellH = ([UIScreen mainScreen].bounds.size.width - 10) * (image.size.height / image.size.width);
-                        NSLog(@"cellH = %.2f",cellH);
-                        [subCellHeights replaceObjectAtIndex:j withObject:@(cellH)];
-                        [weakSlef.tableView reloadData];
-                    }
-                    
-                }];
-            }
-        }
-    }
-    
 }
 
 #pragma mark -- UITableViewDataSource
@@ -119,23 +80,23 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *subCellHeights = self.cellHeights[indexPath.section];
-    NSNumber *number = subCellHeights[indexPath.row];
-    
-    return number.floatValue+10;
+    NSArray *array = self.dataSoureArray[indexPath.section];
+    NSObject *model = array[indexPath.row];
+    return model.heightCell;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
      NSArray *array = self.dataSoureArray[indexPath.section];
     NSObject *model = array[indexPath.row];
-    UITableViewCell *cell;
-    if ([model.identifier isEqualToString:NSStringFromClass([ImageCell class])]) {
-        cell = [ImageCell shareCell:tableView model:model];
-    }else{
-        cell = [tableView dequeueReusableCellWithIdentifier:model.identifier];
-        cell.data = model;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:model.identifier];
+    cell.data = model;
+    if ([model isKindOfClass:[ImgModel class]]) {
+        ImgModel *imgModel = (ImgModel*)model;
+        __weak typeof(self) weakSlef = self;
+        imgModel.block = ^{
+            [weakSlef.tableView reloadData];
+        };
     }
-    
     
     return cell;
 }
@@ -155,14 +116,6 @@
     [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:index] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     
 }
-
--(NSMutableArray *)cellHeights{
-    if (!_cellHeights) {
-        _cellHeights = [NSMutableArray array];
-    }
-    return _cellHeights;
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

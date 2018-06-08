@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MJExtension/MJExtension.h>
-
+#import "UIView+Appertain.h"
 @class ImgModel;
 @interface TitleModel : NSObject
 @property (nonatomic,copy)NSString *title;
@@ -21,4 +21,6 @@
 @interface ImgModel : NSObject
 @property (nonatomic,copy)NSString *photo;
 
+//
+@property(nonatomic,copy)dispatch_block_t  block;
 @end
