@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "ZJPageViewController.h"
+#import "SegmentVerticalController.h"
 #import "ZJSegmentView.h"
 #import <Masonry/Masonry.h>
 #import "UIViewController+MMDrawerController.h"
@@ -34,7 +35,7 @@
     
     
     NSArray *titles = @[@"推荐",@"机器人争霸",@"热点",];
-    self.segmentView.datas = titles;
+    self.segmentView.dataSource = titles;
     [self.segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
         make.top.mas_equalTo(0);
@@ -72,6 +73,8 @@
 
 - (IBAction)verticalAction:(id)sender {
     //竖直
+    SegmentVerticalController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([SegmentVerticalController class])];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)leftBtn{
     //这里的话是通过遍历循环拿到之前在AppDelegate中声明的那个MMDrawerController属性，然后判断是否为打开状态，如果是就关闭，否就是打开(初略解释，里面还有一些条件)

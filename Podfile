@@ -6,6 +6,7 @@ project 'ZJPageController.xcodeproj'
 target 'ZJPageController' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
+  pod 'MJExtension', '~> 3.0.13'
   # 依赖 SDWebImage FLAnimatedImage
   pod 'FLAnimatedImage', '~> 1.0.12'
   pod 'SDWebImage', '~> 4.1.2'

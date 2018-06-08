@@ -1,6 +1,7 @@
 PODS:
   - FLAnimatedImage (1.0.12)
   - Masonry (1.1.0)
+  - MJExtension (3.0.13)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
@@ -20,6 +21,7 @@ PODS:
 DEPENDENCIES:
   - FLAnimatedImage (~> 1.0.12)
   - Masonry (~> 1.1.0)
+  - MJExtension (~> 3.0.13)
   - MMDrawerController (~> 0.6.0)
   - SDWebImage (~> 4.1.2)
 
@@ -27,15 +29,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FLAnimatedImage
     - Masonry
+    - MJExtension
     - MMDrawerController
     - SDWebImage
 
 SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
 
-PODFILE CHECKSUM: b64ff3a4c5c5f45bbd6eb27fea6246b5cb2e8f31
+PODFILE CHECKSUM: d7df0386b3c8115dfa43f3c55ec4f7b4aa10a5ea
 
 COCOAPODS: 1.5.2

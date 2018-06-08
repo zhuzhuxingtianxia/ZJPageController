@@ -45,7 +45,7 @@
         
     }
     self.segmentTitles = titles;
-    self.segmentView.datas = titles;
+    self.segmentView.dataSource = titles;
     self.selectedIndex = 1;
     [self.view setNeedsUpdateConstraints];
 }

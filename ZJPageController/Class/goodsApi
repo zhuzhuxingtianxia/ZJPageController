@@ -1,0 +1,336 @@
+
+[
+{
+"title" : "新品发布",
+"colorValue" : "ff9000",
+"images" : [
+{
+"supGoodsId" : "763522820546371584",
+"height" : "460",
+"subject_id" : "754547891436949504",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/3e9f5ceb-01a4-4128-82ad-a2c2b9c4e223.jpg"
+},
+{
+"supGoodsId" : "764585656757301248",
+"height" : "460",
+"subject_id" : "764017623902068736",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/c671b230-b377-4e87-92ce-622102b1f00b.jpg"
+},
+{
+"supGoodsId" : "757453640351490049",
+"height" : "460",
+"subject_id" : "763527215816253440",
+"width" : "1050",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/de7fadc8-b743-48cf-9930-0388563bb59f.jpg"
+},
+{
+"supGoodsId" : "768293027653939200",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/f3605b3b-a36a-4308-b140-6a05e0f33983.jpg",
+"height" : "460"
+},
+{
+"supGoodsId" : "764650382111584256",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/1a2887de-f3b8-4782-a50d-a0398227bc02.jpg",
+"height" : "460"
+},
+{
+"supGoodsId" : "764746347346702337",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/bb75e921-6bbd-4db1-ad8b-4939b0e09429.jpg",
+"height" : "460"
+},
+{
+"supGoodsId" : "764282874044227585",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/ae865e5d-40f9-48d4-808c-9a45cc4fa499.jpg",
+"height" : "460"
+},
+{
+"supGoodsId" : "764277715142582273",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/037a86e7-ef3d-4cc4-ba26-1dcb0188d6be.jpg",
+"height" : "460"
+},
+{
+"supGoodsId" : "764281505564467201",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/f454d56e-287c-4618-b6fb-2a22309c0d66.jpg",
+"height" : "460"
+},
+{
+"supGoodsId" : "757455295960719361",
+"height" : "460",
+"subject_id" : "763527215816253440",
+"width" : "1050",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/0a6c41db-6c20-490f-b741-98ed9c2eef35.jpg"
+},
+{
+"supGoodsId" : "757089948374306816",
+"height" : "460",
+"subject_id" : "763527215816253440",
+"width" : "1050",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/3ec8b5b1-b68a-44a7-a040-d66ca110d6cd.jpg"
+},
+{
+"supGoodsId" : "764626476201979904",
+"height" : "460",
+"subject_id" : "754547891436949504",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/7bcafd1f-d001-4851-a829-2c4d3398f36f.jpg"
+}
+],
+"type" : "list"
+},
+{
+"title" : "时令蔬果",
+"colorValue" : "5e4d9b",
+"images" : [
+{
+"supGoodsId" : "751228080172056576",
+"height" : "510",
+"subject_id" : "751258272357695488",
+"width" : "1051",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/9fedb034-4c11-4917-b745-3ccf1baff311.jpg"
+},
+{
+"supGoodsId" : "753477816421728257",
+"height" : "510",
+"subject_id" : "754547891436949504",
+"width" : "1051",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/17e293f3-2336-44e5-a1c4-82a8d8dfaa2c.jpg"
+},
+{
+"supGoodsId" : "764631638077386752",
+"height" : "474",
+"subject_id" : "687466750524006400",
+"width" : "1065",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/d1e3e7cf-9a80-4b7f-a166-de69ab41e2ca.jpg"
+}
+],
+"type" : "list"
+},
+{
+"title" : "安心蔬菜",
+"colorValue" : "005AB5",
+"images" : [
+{
+"supGoodsId" : "713923014087921664",
+"height" : "474",
+"subject_id" : "687466750524006400",
+"width" : "1066",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/ba40b672-3e50-47ca-bbe6-bcf72216effe.jpg"
+},
+{
+"supGoodsId" : "764586074912632832",
+"height" : "460",
+"subject_id" : "761733008230301696",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/651d9b31-b4c1-4809-a741-4a9cd759d996.jpg"
+}
+],
+"type" : "list"
+},
+{
+"title" : "营养乳品",
+"colorValue" : "b70000",
+"images" : [
+{
+"supGoodsId" : "764587003762225152",
+"height" : "530",
+"subject_id" : "687466750524006400",
+"width" : "1050",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/699aa631-881a-486c-b30a-e6f21ee4e4da.jpg"
+},
+{
+"supGoodsId" : "764588885985505280",
+"height" : "460",
+"subject_id" : "687466750524006400",
+"width" : "1050",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/f8aa55ca-0bef-4362-96d8-86789173f5db.jpg"
+},
+{
+"supGoodsId" : "753804410344456193",
+"height" : "530",
+"subject_id" : "761733008230301696",
+"width" : "1050",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/a89474c0-c452-4d16-b03d-084ef53aa777.jpg"
+}
+],
+"type" : "list"
+},
+{
+"title" : "肉禽蛋品",
+"colorValue" : "977C00",
+"images" : [
+{
+"supGoodsId" : "740648578161790976",
+"height" : "401",
+"subject_id" : "740336040308068352",
+"width" : "1051",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/36c3ad54-f331-47e3-ac67-8c1b75b4a606.jpg"
+},
+{
+"supGoodsId" : "676877695078371328",
+"height" : "395",
+"subject_id" : "687466750524006400",
+"width" : "1050",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/46710cbe-c26d-4f7b-b23b-011bc935fef2.jpg"
+},
+{
+"supGoodsId" : "713312376603996160",
+"height" : "400",
+"subject_id" : "687466750524006400",
+"width" : "1051",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/bdf2f0cd-1509-408c-b87f-ebd12f415e8b.jpg"
+},
+{
+"supGoodsId" : "764636630716821504",
+"height" : "403",
+"subject_id" : "687466750524006400",
+"width" : "1051",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/74422764-95a9-4cdf-9826-db07e60fca18.jpg"
+},
+{
+"supGoodsId" : "757464218562338817",
+"height" : "460",
+"subject_id" : "764017623902068736",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/dd6680b7-ba4b-4a60-8023-e95885e99e2e.jpg"
+}
+],
+"type" : "list"
+},
+{
+"title" : "水产海鲜",
+"colorValue" : "A52A2A",
+"images" : [
+
+],
+"type" : "list"
+},
+{
+"title" : "粮油副食",
+"colorValue" : "00A600",
+"images" : [
+{
+"supGoodsId" : "759643642905346048",
+"height" : "399",
+"subject_id" : "687466750524006400",
+"width" : "1052",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/48940bc7-485d-4771-aa36-8a8f97227c4b.jpg"
+},
+{
+"supGoodsId" : "764633748017819648",
+"height" : "400",
+"subject_id" : "687466750524006400",
+"width" : "1052",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/7492af23-74f6-4e68-9e8d-0e034819aaa2.jpg"
+},
+{
+"supGoodsId" : "721552449980919809",
+"height" : "399",
+"subject_id" : "721574866832912384",
+"width" : "1052",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/88fed91c-c3ba-47e4-8b7a-bde403a2abea.jpg"
+},
+{
+"supGoodsId" : "721564260935462912",
+"height" : "402",
+"subject_id" : "721574866832912384",
+"width" : "1052",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/5bbd692a-eb28-46e6-bfda-4d359285dcd9.jpg"
+},
+{
+"supGoodsId" : "761781575263305728",
+"height" : "402",
+"subject_id" : "729861856465825792",
+"width" : "1051",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/683e2d1d-3737-4f61-8bb8-7d40046eb534.jpg"
+},
+{
+"supGoodsId" : "762174535627702272",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/d47c130e-eeb7-473d-9e02-2fde4d846a7d.jpeg",
+"height" : "460"
+},
+{
+"supGoodsId" : "762179660060557313",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/7d1c90f3-8e94-479a-b6ca-24cf86fb873e.jpeg",
+"height" : "460"
+},
+{
+"supGoodsId" : "762178513799217152",
+"width" : "1600",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/21dc54e5-bb07-43ca-8559-ccf2634f1213.jpeg",
+"height" : "701"
+},
+{
+"supGoodsId" : "762185845027373057",
+"width" : "1050",
+"photo" : "http://tcmdefaultbucket-1253294191.cossh.myqcloud.com/img/upload/img/upload/advert/3c61c5ff-07a7-419b-a687-3adb9052cb7f.jpeg",
+"height" : "460"
+}
+],
+"type" : "list"
+},
+{
+"title" : "健康零食",
+"colorValue" : "00dee1",
+"images" : [
+{
+"supGoodsId" : "738523519519510528",
+"height" : "363",
+"subject_id" : "729861856465825792",
+"width" : "724",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/48c582f0-d156-49e1-9dff-69be3b7f42db.jpg"
+},
+{
+"supGoodsId" : "738903913758674944",
+"height" : "361",
+"subject_id" : "729861856465825792",
+"width" : "724",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/4491fa2f-c78b-4b1b-b463-017fcb803d93.jpeg"
+},
+{
+"supGoodsId" : "764635946067996672",
+"height" : "507",
+"subject_id" : "687466750524006400",
+"width" : "1045",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/1c2ce031-4d94-4243-850f-c2f19f5811e5.jpg"
+},
+{
+"supGoodsId" : "738482914189856769",
+"width" : "1054",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/32985f4b-1e73-4a84-91c2-31e08b843fb3.jpg",
+"height" : "510"
+}
+],
+"type" : "list"
+},
+{
+"title" : "酒水冲调",
+"colorValue" : "e9d600",
+"images" : [
+{
+"supGoodsId" : "713312784432951296",
+"height" : "400",
+"subject_id" : "687466750524006400",
+"width" : "1052",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/2698dc7c-5248-4eaa-b331-6e685c5650f3.jpg"
+},
+{
+"supGoodsId" : "738531597069537280",
+"height" : "371",
+"subject_id" : "729861856465825792",
+"width" : "724",
+"photo" : "https://s3.cn-north-1.amazonaws.com.cn/www.taocaimall.com/img/upload/img/upload/advert/ca67495e-9b8c-4358-9367-2a2f85943b3c.jpg"
+}
+],
+"type" : "list"
+}
+]

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4CA25263CC0238C15581C8200C7AB851"
+               BlueprintIdentifier = "F58E0A4A62A15749DA988A2780BFCEF4"
                BlueprintName = "Pods-ZJPageController"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pods-ZJPageController.framework">

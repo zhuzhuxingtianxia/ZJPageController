@@ -14,6 +14,13 @@
 		B63B79B220B58DAB0014FC90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B63B79B120B58DAB0014FC90 /* main.m */; };
 		B63B79BC20B58DAB0014FC90 /* ZJPageControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B63B79BB20B58DAB0014FC90 /* ZJPageControllerTests.m */; };
 		B63B79C720B58DAB0014FC90 /* ZJPageControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B63B79C620B58DAB0014FC90 /* ZJPageControllerUITests.m */; };
+		B63C51B220C9392E00B9DCF7 /* goodsApi in Resources */ = {isa = PBXBuildFile; fileRef = B63C51B120C9392E00B9DCF7 /* goodsApi */; };
+		B63C51BF20CA2D2B00B9DCF7 /* SegmentVerticalController.m in Sources */ = {isa = PBXBuildFile; fileRef = B63C51BD20CA2D2A00B9DCF7 /* SegmentVerticalController.m */; };
+		B63C51C320CA30E000B9DCF7 /* NetWorkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B63C51C120CA30E000B9DCF7 /* NetWorkEngine.m */; };
+		B63C51C620CA42BA00B9DCF7 /* ImgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B63C51C520CA42BA00B9DCF7 /* ImgModel.m */; };
+		B63C51C920CA45BB00B9DCF7 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B63C51C820CA45BB00B9DCF7 /* ImageCell.m */; };
+		B63C51CC20CA481200B9DCF7 /* TitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B63C51CB20CA481200B9DCF7 /* TitleCell.m */; };
+		B63C51CF20CA4CD300B9DCF7 /* UIView+Appertain.m in Sources */ = {isa = PBXBuildFile; fileRef = B63C51CE20CA4CD300B9DCF7 /* UIView+Appertain.m */; };
 		B64550A220B653B900D5A27D /* ZJSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64550A120B653B900D5A27D /* ZJSegmentView.m */; };
 		B64550A520B67F6500D5A27D /* ZJPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64550A420B67F6500D5A27D /* ZJPageViewController.m */; };
 		B64550A920B6860B00D5A27D /* UIColor+HexConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = B64550A720B6860B00D5A27D /* UIColor+HexConvert.m */; };
@@ -64,6 +71,19 @@
 		B63B79C220B58DAB0014FC90 /* ZJPageControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJPageControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63B79C620B58DAB0014FC90 /* ZJPageControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPageControllerUITests.m; sourceTree = "<group>"; };
 		B63B79C820B58DAB0014FC90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B63C51B120C9392E00B9DCF7 /* goodsApi */ = {isa = PBXFileReference; lastKnownFileType = text; path = goodsApi; sourceTree = "<group>"; };
+		B63C51BD20CA2D2A00B9DCF7 /* SegmentVerticalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentVerticalController.m; sourceTree = "<group>"; };
+		B63C51BE20CA2D2A00B9DCF7 /* SegmentVerticalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentVerticalController.h; sourceTree = "<group>"; };
+		B63C51C120CA30E000B9DCF7 /* NetWorkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkEngine.m; sourceTree = "<group>"; };
+		B63C51C220CA30E000B9DCF7 /* NetWorkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkEngine.h; sourceTree = "<group>"; };
+		B63C51C420CA42BA00B9DCF7 /* ImgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImgModel.h; sourceTree = "<group>"; };
+		B63C51C520CA42BA00B9DCF7 /* ImgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImgModel.m; sourceTree = "<group>"; };
+		B63C51C720CA45BB00B9DCF7 /* ImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		B63C51C820CA45BB00B9DCF7 /* ImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		B63C51CA20CA481200B9DCF7 /* TitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleCell.h; sourceTree = "<group>"; };
+		B63C51CB20CA481200B9DCF7 /* TitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleCell.m; sourceTree = "<group>"; };
+		B63C51CD20CA4CD300B9DCF7 /* UIView+Appertain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Appertain.h"; sourceTree = "<group>"; };
+		B63C51CE20CA4CD300B9DCF7 /* UIView+Appertain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Appertain.m"; sourceTree = "<group>"; };
 		B64550A020B653B900D5A27D /* ZJSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSegmentView.h; sourceTree = "<group>"; };
 		B64550A120B653B900D5A27D /* ZJSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJSegmentView.m; sourceTree = "<group>"; };
 		B64550A320B67F6500D5A27D /* ZJPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPageViewController.h; sourceTree = "<group>"; };
@@ -162,6 +182,7 @@
 		B63B79A120B58DAB0014FC90 /* ZJPageController */ = {
 			isa = PBXGroup;
 			children = (
+				B63C51C020CA30CF00B9DCF7 /* Manager */,
 				B64550A620B685FC00D5A27D /* Category */,
 				B645509F20B653A800D5A27D /* ZJSegmentView */,
 				B66F730820BCEBC700416177 /* AppDelegate */,
@@ -193,6 +214,30 @@
 			path = ZJPageControllerUITests;
 			sourceTree = "<group>";
 		};
+		B63C51BC20CA2D2A00B9DCF7 /* VerticalController */ = {
+			isa = PBXGroup;
+			children = (
+				B63C51BE20CA2D2A00B9DCF7 /* SegmentVerticalController.h */,
+				B63C51BD20CA2D2A00B9DCF7 /* SegmentVerticalController.m */,
+				B63C51C720CA45BB00B9DCF7 /* ImageCell.h */,
+				B63C51C820CA45BB00B9DCF7 /* ImageCell.m */,
+				B63C51CA20CA481200B9DCF7 /* TitleCell.h */,
+				B63C51CB20CA481200B9DCF7 /* TitleCell.m */,
+				B63C51C420CA42BA00B9DCF7 /* ImgModel.h */,
+				B63C51C520CA42BA00B9DCF7 /* ImgModel.m */,
+			);
+			path = VerticalController;
+			sourceTree = "<group>";
+		};
+		B63C51C020CA30CF00B9DCF7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B63C51C220CA30E000B9DCF7 /* NetWorkEngine.h */,
+				B63C51C120CA30E000B9DCF7 /* NetWorkEngine.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		B645509F20B653A800D5A27D /* ZJSegmentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +254,8 @@
 			children = (
 				B64550A820B6860B00D5A27D /* UIColor+HexConvert.h */,
 				B64550A720B6860B00D5A27D /* UIColor+HexConvert.m */,
+				B63C51CD20CA4CD300B9DCF7 /* UIView+Appertain.h */,
+				B63C51CE20CA4CD300B9DCF7 /* UIView+Appertain.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -235,6 +282,8 @@
 				B66F731220BCEBCE00416177 /* MainViewController.m */,
 				B66F731520BCEBCE00416177 /* CartViewController.h */,
 				B66F731120BCEBCE00416177 /* CartViewController.m */,
+				B63C51BC20CA2D2A00B9DCF7 /* VerticalController */,
+				B63C51B120C9392E00B9DCF7 /* goodsApi */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -351,6 +400,7 @@
 			files = (
 				B63B79AF20B58DAB0014FC90 /* LaunchScreen.storyboard in Resources */,
 				B63B79AC20B58DAB0014FC90 /* Assets.xcassets in Resources */,
+				B63C51B220C9392E00B9DCF7 /* goodsApi in Resources */,
 				B63B79AA20B58DAB0014FC90 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +466,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZJPageController/Pods-ZJPageController-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -423,6 +474,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -457,11 +509,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B63C51C620CA42BA00B9DCF7 /* ImgModel.m in Sources */,
 				B66F731820BCEBCE00416177 /* LeftViewController.m in Sources */,
 				B64550A220B653B900D5A27D /* ZJSegmentView.m in Sources */,
+				B63C51C920CA45BB00B9DCF7 /* ImageCell.m in Sources */,
 				B63B79B220B58DAB0014FC90 /* main.m in Sources */,
+				B63C51CF20CA4CD300B9DCF7 /* UIView+Appertain.m in Sources */,
+				B63C51BF20CA2D2B00B9DCF7 /* SegmentVerticalController.m in Sources */,
 				B66F730E20BCEBC700416177 /* AppDelegate.m in Sources */,
+				B63C51CC20CA481200B9DCF7 /* TitleCell.m in Sources */,
 				B66F731720BCEBCE00416177 /* MainViewController.m in Sources */,
+				B63C51C320CA30E000B9DCF7 /* NetWorkEngine.m in Sources */,
 				B66F730D20BCEBC700416177 /* TabBarController.m in Sources */,
 				B64550A920B6860B00D5A27D /* UIColor+HexConvert.m in Sources */,
 				B66F731B20BCEC1400416177 /* ZJNavigationController.m in Sources */,
