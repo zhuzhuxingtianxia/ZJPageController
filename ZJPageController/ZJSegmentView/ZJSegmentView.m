@@ -10,18 +10,18 @@
 
 @interface ZJSegmentView ()<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collection;
-@property (nonatomic, strong) NSMutableArray *dataSources;
+@property (nonatomic, strong) NSMutableArray *modelArray;
 @property (nonatomic, strong) UIView *line;
 @property (nonatomic, copy) void(^selectBlock)(NSInteger index);
 
 @end
 @implementation ZJSegmentView
-+ (instancetype)segmentViewWithDatas:(NSArray<NSString *> *)datas {
++ (instancetype)segmentViewWithDataSource:(NSArray<NSString *> *)dataSource {
     
-    NSMutableArray *tmpArr = [NSMutableArray arrayWithCapacity:datas.count];
+    NSMutableArray *tmpArr = [NSMutableArray arrayWithCapacity:dataSource.count];
     
     BOOL isDefault = YES;
-    for (NSString *str in datas) {
+    for (NSString *str in dataSource) {
         ZJSegmentModel *model = [[ZJSegmentModel alloc]init];
         model.title = str;
         
@@ -33,23 +33,34 @@
     }
     
     ZJSegmentView *segment = [[ZJSegmentView alloc]init];
-    segment.dataSources = [NSMutableArray arrayWithArray:tmpArr];
+    segment.modelArray = [NSMutableArray arrayWithArray:tmpArr];
     
     return segment;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        
-        _selectedColor = [UIColor redColor];
-        _normalColor = [UIColor blackColor];
-        _fontSize = 15.0;
-        [self.collection registerClass:[ZJSegmentCell class] forCellWithReuseIdentifier:NSStringFromClass([ZJSegmentCell class])];
+       [self setup];
     }
-    
     return self;
 }
+
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+
+-(void)setup {
+    _selectedColor = [UIColor redColor];
+    _normalColor = [UIColor blackColor];
+    _fontSize = 15.0;
+    [self.collection registerClass:[ZJSegmentCell class] forCellWithReuseIdentifier:NSStringFromClass([ZJSegmentCell class])];
+}
+
 - (void)reloadData {
     
     [self.collection reloadData];
@@ -61,12 +72,12 @@
 }
 
 #pragma mark - setters
-- (void)setDatas:(NSArray<NSString *> *)datas {
-    _datas = datas;
-    NSMutableArray *tmpArr = [NSMutableArray arrayWithCapacity:datas.count];
+- (void)setDataSource:(NSArray<NSString *> *)dataSource {
+    _dataSource = dataSource;
+    NSMutableArray *tmpArr = [NSMutableArray arrayWithCapacity:dataSource.count];
     
     BOOL isDefault = YES;
-    for (NSString *str in datas) {
+    for (NSString *str in dataSource) {
         ZJSegmentModel *model = [[ZJSegmentModel alloc]init];
         model.title = str;
         model.fontSize = self.fontSize;
@@ -77,42 +88,28 @@
         [tmpArr addObject:model];
     }
     
-    self.dataSources = [NSMutableArray arrayWithArray:tmpArr];
+    self.modelArray = [NSMutableArray arrayWithArray:tmpArr];
 }
 
-- (void)setFontSize:(CGFloat)fontSize {
-    _fontSize = fontSize;
-    if (self.dataSources.count > 0) {
-        for (ZJSegmentModel *model in self.dataSources) {
-            model.fontSize = fontSize;
-        }
+- (void)setModelArray:(NSMutableArray *)modelArray {
+    _modelArray = modelArray;
+    
+    if (modelArray.count > 0) {
+        [self createLineInitFrame];
+    }else {
+    
+        [self.collection reloadData];
     }
+    
 }
 
-- (void)setDataSources:(NSMutableArray *)dataSources {
-    _dataSources = dataSources;
-    
-    [self.collection reloadData];
-}
-
-- (void)setSelectedIndex:(NSInteger)selectedIndex animation:(BOOL)animation {
-    _selectedIndex = selectedIndex;
-    
-    NSIndexPath *path = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
-    
-    [self moveLineToIndexPath:path animation:animation];
-    if(self.dataSources.count > 0){
-     [self.collection scrollToItemAtIndexPath:path atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:animation];
+-(void)createLineInitFrame{
+    if (self.line.bounds.size.width <= 0) {
+        ZJSegmentModel *model = [_modelArray firstObject];
+        self.line.frame = CGRectMake(LineSpacing, CGRectGetHeight(self.frame) - 5, model.width, 2);
+        [self setSelectedIndex:self.selectedIndex animation:NO];
+        
     }
-    
-    for (ZJSegmentModel *model in self.dataSources) {
-        model.selected = NO;
-    }
-    
-    ZJSegmentModel *model = [self.dataSources objectAtIndex:selectedIndex];
-    model.selected = YES;
-    
-    [self.collection reloadData];
     
 }
 
@@ -120,6 +117,49 @@
     _selectedIndex = selectedIndex;
     [self setSelectedIndex:selectedIndex animation:YES];
 }
+
+- (void)setSelectedIndex:(NSInteger)selectedIndex animation:(BOOL)animation {
+    _selectedIndex = selectedIndex;
+    
+    if(self.modelArray.count > 0){
+        NSIndexPath *path = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
+        
+        [self moveLineToIndexPath:path animation:animation];
+        
+        [self.collection scrollToItemAtIndexPath:path atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:animation];
+    }
+    
+    for (ZJSegmentModel *model in self.modelArray) {
+        model.selected = NO;
+    }
+    
+    ZJSegmentModel *model = [self.modelArray objectAtIndex:selectedIndex];
+    model.selected = YES;
+    
+    [self.collection reloadData];
+    
+}
+
+- (void)setFontSize:(CGFloat)fontSize {
+    _fontSize = fontSize;
+    if (self.modelArray.count > 0) {
+        for (ZJSegmentModel *model in self.modelArray) {
+            model.fontSize = fontSize;
+        }
+    }
+}
+
+
+#pragma mark - layoutSubviews
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.collection.backgroundColor = self.backgroundColor;
+    self.collection.frame = self.bounds;
+    
+    [self createLineInitFrame];
+}
+
 #pragma mark - Getter
 - (UIView *)line {
     if (_line == nil) {
@@ -156,7 +196,7 @@
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return self.dataSources.count;
+    return self.modelArray.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -167,7 +207,7 @@
     cell.normalColor = self.normalColor;
     cell.fontSize = self.fontSize;
     
-    ZJSegmentModel *model = [self.dataSources objectAtIndex:indexPath.row];
+    ZJSegmentModel *model = [self.modelArray objectAtIndex:indexPath.row];
     cell.model = model;
     
     return cell;
@@ -197,10 +237,10 @@ static CGFloat LineSpacing = 4.0;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (self.itemWidth > 0) {
-        CGFloat itemWidth = self.itemWidth - (self.dataSources.count+1)*LineSpacing/self.dataSources.count;
+        CGFloat itemWidth = self.itemWidth - (self.modelArray.count+1)*LineSpacing/self.modelArray.count;
         return CGSizeMake(itemWidth, self.bounds.size.height);
     }
-    ZJSegmentModel *model = [self.dataSources objectAtIndex:indexPath.row];
+    ZJSegmentModel *model = [self.modelArray objectAtIndex:indexPath.row];
     return CGSizeMake(model.width, self.bounds.size.height);
 }
 
@@ -213,12 +253,18 @@ static CGFloat LineSpacing = 4.0;
 - (void)moveLineToIndexPath:(NSIndexPath *)indexPath animation:(BOOL)animation {
     
     ZJSegmentCell *cell = (ZJSegmentCell *)[self.collection cellForItemAtIndexPath:indexPath];
+    if(cell == nil) {
+        [self.collection reloadData];
+        [self.collection layoutIfNeeded];
+        cell = (ZJSegmentCell *)[self.collection cellForItemAtIndexPath:indexPath];
+    }
+    UICollectionViewLayoutAttributes *pose = [self.collection.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath];
     
     CGRect lineBounds = self.line.bounds;
-    lineBounds.size.width = cell.bounds.size.width;
+    lineBounds.size.width = pose.bounds.size.width;
     
     CGPoint lineCenter = self.line.center;
-    lineCenter.x = cell.center.x;
+    lineCenter.x = pose.center.x;
     
     if (animation) {
         
@@ -233,19 +279,6 @@ static CGFloat LineSpacing = 4.0;
         self.line.center = lineCenter;
     }
     
-}
-#pragma mark - layoutSubviews
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.collection.backgroundColor = self.backgroundColor;
-    self.collection.frame = self.bounds;
-    
-    ZJSegmentModel *model = [self.dataSources firstObject];
-    
-    self.line.frame = CGRectMake(LineSpacing, CGRectGetHeight(self.frame) - 2, model.width, 2);
-    
-    [self setSelectedIndex:self.selectedIndex animation:NO];
 }
 
 @end
