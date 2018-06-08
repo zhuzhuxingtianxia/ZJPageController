@@ -24,12 +24,13 @@
 @interface NSObject(Appertain)
 @property (nonatomic,copy)NSString *identifier;
 
+@property (nonatomic,assign)CGFloat  heightCell;
+
 @end
 
 //UIView添加附加属性
 @interface UIView (Appertain)
 @property (nonatomic,strong)id data;
-@property (nonatomic,assign)CGFloat  heightCell;
 @property (nonatomic,weak)NSIndexPath *indexPathValue;
 @property (nonatomic,assign)NSInteger  cellType;
 

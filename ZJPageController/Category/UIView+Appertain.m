@@ -16,6 +16,14 @@
     return objc_getAssociatedObject(self, @selector(identifier));
 }
 
+-(void)setHeightCell:(CGFloat)heightCell {
+    objc_setAssociatedObject(self, @selector(heightCell), [NSNumber numberWithFloat:heightCell], OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(CGFloat)heightCell{
+    return [objc_getAssociatedObject(self, @selector(heightCell)) floatValue];
+}
+
 @end
 
 @implementation UIView (Appertain)
@@ -26,14 +34,6 @@
 
 -(id)data {
     return objc_getAssociatedObject(self, @selector(data));
-}
-
--(void)setHeightCell:(CGFloat)heightCell {
-    objc_setAssociatedObject(self, @selector(heightCell), [NSNumber numberWithFloat:heightCell], OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
--(CGFloat)heightCell{
-    return [objc_getAssociatedObject(self, @selector(heightCell)) floatValue];
 }
 
 -(void)setIndexPathValue:(NSIndexPath *)indexPathValue{

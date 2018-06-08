@@ -11,5 +11,6 @@
 #import "ImgModel.h"
 
 @interface ImageCell : UITableViewCell
++(ImageCell*)shareCell:(UITableView*)tableView model:(id)model;
 
 @end

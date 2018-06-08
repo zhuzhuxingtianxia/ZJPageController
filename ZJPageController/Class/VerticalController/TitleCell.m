@@ -21,6 +21,7 @@
 }
 -(void)setData:(id)data {
     TitleModel *model = (TitleModel*)data;
+    model.heightCell = 44;
     _titleLabel.text = model.title;
     _titleLabel.textColor = [UIColor colorHexString:model.colorValue];
     for (UIView *view in _lineView) {
