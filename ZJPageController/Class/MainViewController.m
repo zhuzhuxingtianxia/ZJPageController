@@ -57,7 +57,7 @@
         _segmentView.normalColor = [UIColor greenColor];
         _segmentView.selectedColor = [UIColor redColor];
         _segmentView.selectedIndex = 0;
-        _segmentView.itemWidth = 414/3.0;
+        _segmentView.itemWidth = [[UIScreen mainScreen] bounds].size.width/3.0;
         [self.view addSubview:_segmentView];
     }
     
