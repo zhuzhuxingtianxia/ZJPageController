@@ -195,12 +195,31 @@
                     <view key="view" contentMode="scaleToFill" id="5jf-rU-Cgt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goV-nZ-7i3">
+                                <rect key="frame" x="89" y="79" width="59" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="LAR-bd-xty"/>
+                                    <constraint firstAttribute="width" constant="59" id="RYp-tq-55g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="goV-nZ-7i3" firstAttribute="leading" secondItem="5jf-rU-Cgt" secondAttribute="leadingMargin" constant="73" id="Lsd-pX-KUC"/>
+                            <constraint firstItem="goV-nZ-7i3" firstAttribute="top" secondItem="1OG-zG-NrP" secondAttribute="bottom" constant="59" id="hvA-Qa-WOv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="goV-nZ-7i3" id="M5R-nz-EQK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMa-44-zXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1305" y="96"/>
+            <point key="canvasLocation" x="-1306.4000000000001" y="95.802098950524751"/>
         </scene>
         <!--Left View Controller-->
         <scene sceneID="xYb-1F-ERR">

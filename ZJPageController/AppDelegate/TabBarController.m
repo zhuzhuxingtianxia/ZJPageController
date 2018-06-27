@@ -8,6 +8,8 @@
 
 #import "TabBarController.h"
 #import "ZJNavigationController.h"
+#import "UIImage+ZJExtension.h"
+
 @interface TabBarController ()
 
 @end
@@ -31,7 +33,17 @@
         UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:className];
         
         vc.tabBarItem.image = [[UIImage imageNamed:imageArray[j]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        
+        NSLog(@"out = %@",[NSThread currentThread]);
+        dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+        dispatch_async(queue, ^{
+            NSLog(@"in = %@",[NSThread currentThread]);
+            //同步下载
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://pic.58pic.com/58pic/13/19/88/64J58PICydg_1024.jpg"]];
+            UIImage *img = [[UIImage imageWithData:data] imageWithScaledToSize:CGSizeMake(60, 60)];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                vc.tabBarItem.image = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            });
+        });
         vc.tabBarItem.selectedImage = [[UIImage imageNamed:imageSelectArray[j]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 //        vc.tabBarItem.title = titleArray[j];
         

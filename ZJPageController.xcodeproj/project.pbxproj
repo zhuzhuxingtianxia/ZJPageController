@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		128894D276E8A9FA828DA459 /* Pods_ZJPageControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9217832948C980288E2FB45D /* Pods_ZJPageControllerTests.framework */; };
+		B60AD34620E3632300393066 /* UIImage+ZJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B60AD34520E3632300393066 /* UIImage+ZJExtension.m */; };
 		B63B79AA20B58DAB0014FC90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63B79A820B58DAB0014FC90 /* Main.storyboard */; };
 		B63B79AC20B58DAB0014FC90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63B79AB20B58DAB0014FC90 /* Assets.xcassets */; };
 		B63B79AF20B58DAB0014FC90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63B79AD20B58DAB0014FC90 /* LaunchScreen.storyboard */; };
@@ -59,6 +60,8 @@
 		64E6C278A93AA7372E6B6A82 /* Pods-ZJPageControllerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJPageControllerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJPageControllerUITests/Pods-ZJPageControllerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		781DC7F31B1F878FAFD210DE /* Pods-ZJPageController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJPageController.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJPageController/Pods-ZJPageController.release.xcconfig"; sourceTree = "<group>"; };
 		9217832948C980288E2FB45D /* Pods_ZJPageControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJPageControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60AD34420E3632300393066 /* UIImage+ZJExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZJExtension.h"; sourceTree = "<group>"; };
+		B60AD34520E3632300393066 /* UIImage+ZJExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZJExtension.m"; sourceTree = "<group>"; };
 		B63B799F20B58DAB0014FC90 /* ZJPageController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJPageController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63B79A920B58DAB0014FC90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B63B79AB20B58DAB0014FC90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				B64550A720B6860B00D5A27D /* UIColor+HexConvert.m */,
 				B63C51CD20CA4CD300B9DCF7 /* UIView+Appertain.h */,
 				B63C51CE20CA4CD300B9DCF7 /* UIView+Appertain.m */,
+				B60AD34420E3632300393066 /* UIImage+ZJExtension.h */,
+				B60AD34520E3632300393066 /* UIImage+ZJExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 				B63C51C920CA45BB00B9DCF7 /* ImageCell.m in Sources */,
 				B63B79B220B58DAB0014FC90 /* main.m in Sources */,
 				B63C51CF20CA4CD300B9DCF7 /* UIView+Appertain.m in Sources */,
+				B60AD34620E3632300393066 /* UIImage+ZJExtension.m in Sources */,
 				B63C51BF20CA2D2B00B9DCF7 /* SegmentVerticalController.m in Sources */,
 				B66F730E20BCEBC700416177 /* AppDelegate.m in Sources */,
 				B63C51CC20CA481200B9DCF7 /* TitleCell.m in Sources */,
@@ -689,7 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D9FD56NYNC;
+				DEVELOPMENT_TEAM = N3379XTAJ9;
 				INFOPLIST_FILE = ZJPageController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -705,7 +711,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D9FD56NYNC;
+				DEVELOPMENT_TEAM = N3379XTAJ9;
 				INFOPLIST_FILE = ZJPageController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

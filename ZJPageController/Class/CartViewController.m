@@ -10,6 +10,7 @@
 #import "UIViewController+MMDrawerController.h"
 
 @interface CartViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -26,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    _label.text = @"这是 \n 优惠券";
 }
 
 -(void)leftBtn{
