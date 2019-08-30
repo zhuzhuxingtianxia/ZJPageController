@@ -11,6 +11,7 @@
 
 @interface CartViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIView *blendView;
 
 @end
 
@@ -27,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _label.text = @"这是 \n 优惠券";
+    _label.text = @"这是优惠券";
 }
 
 -(void)leftBtn{
@@ -35,6 +36,12 @@
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
     
 }
+- (IBAction)sliderChange:(UISlider *)sender {
+    [self.label setValue:@(sender.value) forKey:@"progress"];
+    [self.blendView setValue:@(sender.value) forKey:@"progress"];
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

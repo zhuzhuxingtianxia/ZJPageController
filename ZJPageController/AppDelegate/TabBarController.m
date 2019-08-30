@@ -41,7 +41,10 @@
             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://pic.58pic.com/58pic/13/19/88/64J58PICydg_1024.jpg"]];
             UIImage *img = [[UIImage imageWithData:data] imageWithScaledToSize:CGSizeMake(60, 60)];
             dispatch_async(dispatch_get_main_queue(), ^{
-                vc.tabBarItem.image = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                if (img) {
+                    vc.tabBarItem.image = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                }
+                
             });
         });
         vc.tabBarItem.selectedImage = [[UIImage imageNamed:imageSelectArray[j]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

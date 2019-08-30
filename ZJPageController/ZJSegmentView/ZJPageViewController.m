@@ -13,7 +13,7 @@
 //状态栏高
 #define statusBarH CGRectGetHeight([UIApplication sharedApplication].statusBarFrame)
 
-@interface ZJPageViewController ()<ZJSegmentViewDelagate,UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+@interface ZJPageViewController ()<ZJSegmentViewDelagate,UIPageViewControllerDataSource,UIPageViewControllerDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIPageViewController *pageViewController;
 @property (nonatomic, strong) ZJSegmentView *segmentView;
@@ -195,6 +195,11 @@
     NSLog(@"-----willTransitionToTraitCollection");
 }
 
+#pragma mark -- UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    //处理逻辑，有坑：https://www.jianshu.com/p/4cc4638f44e4
+}
+
 #pragma mark -- getter
 - (ZJSegmentView *)segmentView {
     if (_segmentView == nil) {
@@ -214,7 +219,13 @@
         _pageViewController = [[UIPageViewController alloc]initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:option];
         _pageViewController.delegate = self;
         _pageViewController.dataSource = self;
-        
+        for (UIView *subView in _pageViewController.view.subviews) {
+            if ([subView isKindOfClass:[UIScrollView class]]) {
+                UIScrollView *scrollView = (UIScrollView*)subView;
+                scrollView.delegate = self;
+                NSLog(@"找到scrollView");
+            }
+        }
         [self addChildViewController:_pageViewController];
         [self.view addSubview:_pageViewController.view];
     }

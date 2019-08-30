@@ -6,3 +6,8 @@
 
 ### 垂直滚动效果
 ![img](https://github.com/zhuzhuxingtianxia/ZJPageController/blob/master/20180608.gif)
+
+### 混色的使用
+![img](https://github.com/zhuzhuxingtianxia/ZJPageController/blob/master/blendView.png)
+
+

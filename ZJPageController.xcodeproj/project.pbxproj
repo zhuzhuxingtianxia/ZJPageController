@@ -31,6 +31,7 @@
 		B66F731720BCEBCE00416177 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F731220BCEBCE00416177 /* MainViewController.m */; };
 		B66F731820BCEBCE00416177 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F731320BCEBCE00416177 /* LeftViewController.m */; };
 		B66F731B20BCEC1400416177 /* ZJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F731A20BCEC1400416177 /* ZJNavigationController.m */; };
+		B67A67B3215A2B7700C59205 /* ZJBlendView.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A67B2215A2B7700C59205 /* ZJBlendView.m */; };
 		BFB81794E165A6522D2658D6 /* Pods_ZJPageController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3321EE6A6D1742E330EDEC6F /* Pods_ZJPageController.framework */; };
 		C02B012955C81E7ED1D1A453 /* Pods_ZJPageControllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEA7CA38E04E04D9CECC034 /* Pods_ZJPageControllerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,8 @@
 		B66F731520BCEBCE00416177 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
 		B66F731920BCEC1400416177 /* ZJNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJNavigationController.h; sourceTree = "<group>"; };
 		B66F731A20BCEC1400416177 /* ZJNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJNavigationController.m; sourceTree = "<group>"; };
+		B67A67B1215A2B7700C59205 /* ZJBlendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBlendView.h; sourceTree = "<group>"; };
+		B67A67B2215A2B7700C59205 /* ZJBlendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBlendView.m; sourceTree = "<group>"; };
 		B7709F4F289E87F6EA6C6998 /* Pods-ZJPageController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJPageController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJPageController/Pods-ZJPageController.debug.xcconfig"; sourceTree = "<group>"; };
 		C23914A88E79096E8A2E3919 /* Pods-ZJPageControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJPageControllerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJPageControllerTests/Pods-ZJPageControllerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +249,8 @@
 			children = (
 				B64550A020B653B900D5A27D /* ZJSegmentView.h */,
 				B64550A120B653B900D5A27D /* ZJSegmentView.m */,
+				B67A67B1215A2B7700C59205 /* ZJBlendView.h */,
+				B67A67B2215A2B7700C59205 /* ZJBlendView.m */,
 				B64550A320B67F6500D5A27D /* ZJPageViewController.h */,
 				B64550A420B67F6500D5A27D /* ZJPageViewController.m */,
 			);
@@ -520,6 +525,7 @@
 				B63C51C920CA45BB00B9DCF7 /* ImageCell.m in Sources */,
 				B63B79B220B58DAB0014FC90 /* main.m in Sources */,
 				B63C51CF20CA4CD300B9DCF7 /* UIView+Appertain.m in Sources */,
+				B67A67B3215A2B7700C59205 /* ZJBlendView.m in Sources */,
 				B60AD34620E3632300393066 /* UIImage+ZJExtension.m in Sources */,
 				B63C51BF20CA2D2B00B9DCF7 /* SegmentVerticalController.m in Sources */,
 				B66F730E20BCEBC700416177 /* AppDelegate.m in Sources */,
